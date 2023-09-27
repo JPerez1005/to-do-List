@@ -9,7 +9,7 @@ let uncheck='fa-circle';
 let lineThrough='line-trough';
 let id
 let List
-
+let buttonDark=d.getElementById('bDark');
 
 // Creación de fecha
 let Fecha=new Date();
@@ -50,6 +50,13 @@ function tareaEliminada(element)
 {
     element.parentNode.parentNode.removeChild(element.parentNode);
     List[element.id].eliminado=true;
+}
+
+// función cambio de fondo
+function cambiarFondo()
+{
+    let body=d.querySelector('body');
+    body.classList('.dark');
 }
 
 button.addEventListener('click',()=>{
@@ -102,6 +109,13 @@ lista.addEventListener('click', function(event){
     // Convertimos info a json
     localStorage.setItem('TODO',JSON.stringify(List));
 })
+
+buttonDark.addEventListener('click', function(){
+    let body=d.querySelector('body');
+    body.classList.toggle('dark');
+    buttonDark.classList.toggle('day');
+    buttonDark.classList.toggle('night');
+});
 
 
 // Obtener datos del local 
