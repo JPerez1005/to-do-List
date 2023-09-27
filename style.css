@@ -63,6 +63,36 @@ body
 {
     color: var(--dark);
     letter-spacing: 1px;
+    display: block;
+    white-space: nowrap;
+    border-right: 2px solid;
+    width: 18ch;
+    font-size: 1rem;
+    animation: typing 2s steps(25), blink .5s infinite step-end;
+    overflow: hidden;
+}
+
+.perfil span
+{
+    animation: maquina 4s infinite alternate
+}
+
+@keyframes maquina{
+    from{
+        width: 50%;
+    }to{
+        width: 0;
+    }
+}
+
+@keyframes typing{
+    from{
+        width: 0;
+    }
+}
+
+@keyframes blink{
+    50%{border-color: transparent;}
 }
 
 #fecha
